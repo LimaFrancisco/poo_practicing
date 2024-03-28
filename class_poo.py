@@ -18,24 +18,33 @@ class Caneca:
 class CanecaLondrina(Caneca):
     def __init__(self):
         super().__init__("Caneca Londrina", "Cidade de Londres", "Branca")
+        self.bebida = "Chá"
 
     def extras(self):
         print("Como bônus você ganha uma colher")
 
+    def beber(self):
+        self.status = "Vazia" 
+        print("Ta na hora da chá das 5")
+
 class CanecaBatman(Caneca):
     def __init__(self):
         super().__init__("Caneca Gothan", "Batman", "Preta")
+        self.bebida = "Café"
 
     def som(self):
         print("I`m Batman")
 
+    def beber(self):
+        return super().beber() + f" {self.bebida}"
     
 caneca_londres = CanecaLondrina()
 caneca_bylearn = Caneca("Caneca ByLearn", "Foguete da ByLearn", "Branca")
 caneca_batman = CanecaBatman()
 
-caneca_londres.extras()
-caneca_batman.som()
+print(caneca_bylearn.beber())
+print(caneca_londres.beber())
+print(caneca_batman.beber())
 
 # print(f"A caneca, {caneca1.nome} possui a logo {caneca1.logo}")
 # print(f"A caneca, {caneca2.nome} possui a logo {caneca2.logo}")
