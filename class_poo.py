@@ -9,23 +9,46 @@ class Caneca:
 
     def beber(self):
         self.status = 'Vazia'
+        return f"É da caneca {self.nome} que eu estou bebendo"
 
     def encher(self):
         self.status = 'Cheia'
+        return f"Estou enchenco a caneca {self.nome}"
 
-caneca1 = Caneca("Caneca Londrina", "Cidade de Londres", "Branca")
-caneca2 = Caneca("Caneca ByLearn", "Foguete da ByLearn", "Branca")
+class CanecaLondrina(Caneca):
+    def __init__(self):
+        super().__init__("Caneca Londrina", "Cidade de Londres", "Branca")
 
-print(f"A caneca, {caneca1.nome} possui a logo {caneca1.logo}")
-print(f"A caneca, {caneca2.nome} possui a logo {caneca2.logo}")
+    def extras(self):
+        print("Como bônus você ganha uma colher")
 
-caneca1.beber()
-caneca1.encher()
+class CanecaBatman(Caneca):
+    def __init__(self):
+        super().__init__("Caneca Gothan", "Batman", "Preta")
 
-caneca2.beber()
+    def som(self):
+        print("I`m Batman")
 
-print(f"Caneca 1: {caneca1.status}")
-print(f"Caneca 2: {caneca2.status}")
+    
+caneca_londres = CanecaLondrina()
+caneca_bylearn = Caneca("Caneca ByLearn", "Foguete da ByLearn", "Branca")
+caneca_batman = CanecaBatman()
+
+caneca_londres.extras()
+caneca_batman.som()
+
+# print(f"A caneca, {caneca1.nome} possui a logo {caneca1.logo}")
+# print(f"A caneca, {caneca2.nome} possui a logo {caneca2.logo}")
+
+# print(caneca1.beber())
+# print(caneca1.encher())
+
+# print(caneca2.beber())
+
+# print(f"Caneca 1: {caneca1.status}")
+# print(f"Caneca 2: {caneca2.status}")
+
+# print(caneca1.fortato)
 
 #     def beber(self):
 #         print(f"estou bebendo da caneca {self.nome} ")
