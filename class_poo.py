@@ -1,11 +1,14 @@
 class Caneca:
     fortato = 'Cilindrico com alça lateral'
+    __preco_fabrica = 15
 
     def __init__(self, nome, logo, cor): # construtor da classe
         self.nome = nome
         self.logo = logo 
         self.cor = cor
         self.status = 'Cheia'
+        self.preco = 24.90
+    
 
     def beber(self):
         self.status = 'Vazia'
@@ -19,6 +22,7 @@ class CanecaLondrina(Caneca):
     def __init__(self):
         super().__init__("Caneca Londrina", "Cidade de Londres", "Branca") # construtor herdado da classe mãe
         self.bebida = "Chá"
+        self.preco = 29.90
 
     def extras(self):
         print("Como bônus você ganha uma colher")
@@ -30,6 +34,7 @@ class CanecaBatman(Caneca):
     def __init__(self):
         super().__init__("Caneca Gothan", "Batman", "Preta")
         self.bebida = "Café"
+        self.preco = 34.90
 
     def som(self):
         print("I`m Batman")
@@ -45,34 +50,12 @@ print(caneca_bylearn.beber())
 print(caneca_londres.beber())
 print(caneca_batman.beber())
 
-# print(f"A caneca, {caneca1.nome} possui a logo {caneca1.logo}")
-# print(f"A caneca, {caneca2.nome} possui a logo {caneca2.logo}")
+print("PROMOÇÃO")
+caneca_bylearn.preco = caneca_bylearn.preco - 5
+caneca_londres.preco = caneca_londres.preco - 5
+caneca_batman.preco = caneca_batman.preco - 5
 
-# print(caneca1.beber())
-# print(caneca1.encher())
-
-# print(caneca2.beber())
-
-# print(f"Caneca 1: {caneca1.status}")
-# print(f"Caneca 2: {caneca2.status}")
-
-# print(caneca1.fortato)
-
-#     def beber(self):
-#         print(f"estou bebendo da caneca {self.nome} ")
-
-# caneca1 = Caneca()
-
-# caneca1.logo = "Logo"
-# caneca1.cor = "Verde"
-# caneca1.nome = "Teste"
-
-# print(caneca1.logo, caneca1.cor, caneca1.nome)
-
-# caneca1.beber()
-
-# Caneca.logo = 'Padrão' # modificado direto da classe, não é uma boa prática
-
-# caneca2 = Caneca()
-
-# print(caneca2.logo)
+print("NOVOS PREÇOS")
+print(f"{caneca_bylearn.nome} tem o valor de {caneca_bylearn.preco} reais")
+print(f"{caneca_londres.nome} tem o valor de {caneca_londres.preco} reais")
+print(f"{caneca_batman.nome} tem o valor de {caneca_batman.preco} reais")
